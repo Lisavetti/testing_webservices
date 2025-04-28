@@ -4,6 +4,23 @@ module.exports = {
         booking: 'booking'
     },
 
+    userCredentials: {
+        username: "admin",
+        password: "password123"
+    },
+
+    bookingData1: {
+        firstname: "UserFirstname",
+        lastname: "UserLastName",
+        totalprice: 150,
+        depositpaid: true,
+        bookingdates: {
+            checkin: "2024-12-01",
+            checkout: "2024-12-10"
+        },
+        additionalneeds: "Dinner"
+    },
+
     bookingData: {
         firstname: 'John',
         lastname: 'Doe',
@@ -15,7 +32,7 @@ module.exports = {
         },
         additionalneeds: 'Breakfast',
     },
-    
+
     bookingSchema: {
         firstname: 'string',
         lastname: 'string',
@@ -56,5 +73,5 @@ module.exports = {
     },
 
     nonExistingBookingId: 12345,
-    invalidToken : "invalidtoken123"
+    invalidToken: "invalidtoken123"
 };

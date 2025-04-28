@@ -10,24 +10,10 @@ let bookingId = null;
 describe("Restful Booker API tests with Axios", () => {
 
   beforeAll(async () => {
-    const authRes = await api.post(`${data.endpoints.auth}`, {
-      username: "admin",
-      password: "password123",
-    });
+    const authRes = await api.post(`${data.endpoints.auth}`, data.userCredentials);
     token = authRes.data.token;
 
-    const bookingData = {
-      firstname: "John",
-      lastname: "Doe",
-      totalprice: 111,
-      depositpaid: true,
-      bookingdates: {
-        checkin: "2024-12-01",
-        checkout: "2024-12-10"
-      },
-      additionalneeds: "Breakfast"
-    };
-    const bookingRes = await api.post(`${data.endpoints.booking}`, bookingData);
+    const bookingRes = await api.post(`${data.endpoints.booking}`, data.bookingData1);
     bookingId = bookingRes.data.bookingid;
 
     const res = await api.get(`${data.endpoints.booking}`);
